@@ -73,6 +73,14 @@
                     <ic:SymbolIcon FontSize="14" Symbol="Image" />
                 </Button>
                 <Button
+                    x:Name="ScreenshotButton"
+                    AutomationProperties.Name="{ext:Locale Name=Screenshot}"
+                    Click="OnScreenshotButtonClick"
+                    Style="{StaticResource SmallIconButtonStyle}"
+                    ToolTipService.ToolTip="{ext:Locale Name=Screenshot}">
+                    <ic:SymbolIcon FontSize="14" Symbol="Camera" />
+                </Button>
+                <Button
                     AutomationProperties.Name="{ext:Locale Name=Tools}"
                     IsEnabled="{x:Bind ViewModel.SelectedModel.IsToolSupport, Mode=OneWay}"
                     Style="{StaticResource SmallIconButtonStyle}"

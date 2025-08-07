@@ -9,6 +9,8 @@ using RodelAgent.Statics;
 using RodelAgent.UI.Toolkits;
 using System.Text.Json;
 using Windows.ApplicationModel.DataTransfer;
+using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.System;
 
 namespace RodelAgent.UI.ViewModels.Core;
@@ -193,6 +195,26 @@ public sealed partial class ChatSessionViewModel
 
         SetCurrentConversation(null);
         RequestFocusInput?.Invoke(this, EventArgs.Empty);
+    }
+
+    public async Task AddImageToMessageAsync(string filePath)
+    {
+        var file = await StorageFile.GetFileFromPathAsync(filePath);
+        var buffer = await FileIO.ReadBufferAsync(file);
+        var bytes = new byte[buffer.Length];
+        buffer.CopyTo(bytes);
+        var base64 = Convert.ToBase64String(bytes);
+        var message = new ChatInteropMessage
+        {
+            Role = "user",
+            Message = $"<img src=\"data:image/png;base64,{base64}\" />",
+            Id = Guid.NewGuid().ToString("N"),
+            Time = DateTimeOffset.Now.ToUnixTimeSeconds(),
+        };
+
+        Messages.Add(message);
+        await SaveCurrentMessagesAsync();
+        await AddInteropMessageAsync(message.ToChatMessage());
     }
 
     private void ApplyAgentMessage(ChatAgent agent, ChatWebInteropMessage interopMessage)

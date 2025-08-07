@@ -453,6 +453,21 @@
   <data name="SaveAsPreset" xml:space="preserve">
     <value>将当前会话保存为预设</value>
   </data>
+  <data name="Screenshot" xml:space="preserve">
+    <value>截图</value>
+  </data>
+  <data name="ScreenshotDialogTitle" xml:space="preserve">
+    <value>截图</value>
+  </data>
+  <data name="ScreenshotDialogContent" xml:space="preserve">
+    <value>选择截图类型：</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>全屏</value>
+  </data>
+  <data name="Window" xml:space="preserve">
+    <value>窗口</value>
+  </data>
   <data name="Services" xml:space="preserve">
     <value>服务</value>
   </data>
