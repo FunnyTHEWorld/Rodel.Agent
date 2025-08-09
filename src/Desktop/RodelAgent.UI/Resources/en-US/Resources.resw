@@ -703,21 +703,6 @@ You can manually adjust the limits, and the app will intercept the specified rou
   <data name="SaveAsPreset" xml:space="preserve">
     <value>Save as preset</value>
   </data>
-  <data name="Screenshot" xml:space="preserve">
-    <value>Screenshot</value>
-  </data>
-  <data name="ScreenshotDialogTitle" xml:space="preserve">
-    <value>Screenshot</value>
-  </data>
-  <data name="ScreenshotDialogContent" xml:space="preserve">
-    <value>Choose a screenshot type:</value>
-  </data>
-  <data name="FullScreen" xml:space="preserve">
-    <value>Full Screen</value>
-  </data>
-  <data name="Window" xml:space="preserve">
-    <value>Window</value>
-  </data>
   <data name="SeeDetail" xml:space="preserve">
     <value>See detail</value>
   </data>
